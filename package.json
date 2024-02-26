@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "start": "node --loader ts-node/esm src/index.ts",
-    "start:dev": "nodemon -I --exec node --trace-warnings --experimental-specifier-resolution=node --loader ts-node/esm ./index.ts",
+    "start:dev": "nodemon -I --exec node --trace-warnings -r ts-node/register/transpile-only --loader ts-node/esm ./index.ts",
     "start:prod": "tsc && node dist/index.ts",
     "build": "tsc",
     "test": "cross-env TEST_ENV=test jest --silent"
